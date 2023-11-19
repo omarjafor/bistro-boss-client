@@ -19,7 +19,9 @@
     "react-parallax": "^3.5.1",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.19.0",
+    "react-simple-captcha": "^9.3.0",
     "react-tabs": "^6.0.2",
+    "sweetalert2": "^11.10.0",
     "swiper": "^11.0.4"
   },
   "devDependencies": {
