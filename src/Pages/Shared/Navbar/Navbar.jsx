@@ -4,11 +4,11 @@ import { FaShoppingCart } from 'react-icons/fa';
 
 const Navbar = () => {
 
-    // const handleLogOut = () => {
-    //     logOut()
-    //         .then(() => { })
-    //         .catch(error => console.log(error));
-    // }
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error));
+    }
 
     const navOptions = <>
         <li><Link to="/">Home</Link></li>
@@ -24,12 +24,12 @@ const Navbar = () => {
             </Link>
         </li>
         {
-            // user ? <>
-            //     {/* <span>{user?.displayName}</span> */}
-            //     <button onClick={handleLogOut} className="btn btn-ghost">LogOut</button>
-            // </> : <>
-            //     <li><Link to="/login">Login</Link></li>
-            // </>
+            user ? <>
+                <span>{user?.displayName}</span>
+                <button onClick={handleLogOut} className="btn btn-ghost">LogOut</button>
+            </> : <>
+                <li><Link to="/login">Login</Link></li>
+            </>
         }
     </>
     
