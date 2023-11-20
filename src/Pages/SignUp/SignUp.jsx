@@ -27,7 +27,7 @@ const SignUp = () => {
                         //     .then(res => {
                         //         if (res.data.insertedId) {
                         //             console.log('user added to the database')
-                        //             reset();
+                                    reset();
                                     Swal.fire({
                                         position: 'top-end',
                                         icon: 'success',
@@ -38,10 +38,9 @@ const SignUp = () => {
                                     navigate('/');
                         //         }
                         //     })
-
                     })
                     .catch(error => console.log(error))
-            })
+        })
     };
 
     return (
@@ -100,7 +99,7 @@ const SignUp = () => {
                                 <input className="btn btn-primary" type="submit" value="Sign Up" />
                             </div>
                         </form>
-                        <p className="px-6"><small>Already have an account <Link to="/login">Login</Link></small></p>
+                        <p className="px-6"><small>Already have an account <Link className="btn btn-info ml-2 mb-2" to="/login">Login</Link></small></p>
                         {/* <SocialLogin></SocialLogin> */}
                     </div>
                 </div>
