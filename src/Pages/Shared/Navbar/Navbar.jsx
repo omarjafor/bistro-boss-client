@@ -1,8 +1,10 @@
 
 import { Link } from "react-router-dom";
 import { FaShoppingCart } from 'react-icons/fa';
+import useAuth from "../../../Hooks/useAuth";
 
 const Navbar = () => {
+    const { user, logOut } = useAuth();
 
     const handleLogOut = () => {
         logOut()
