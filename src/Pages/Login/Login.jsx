@@ -7,10 +7,12 @@ import Swal from 'sweetalert2'
 
 const Login = () => {
     const [disabled, setDisabled] = useState(true);
+    const { signIn } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
 
-    const { signIn } = useAuth();
+    const from = location.state?.from?.pathname || "/";
+    console.log('state in the location login page', location.state)
 
     useEffect(() => {
         loadCaptchaEnginge(6);
@@ -45,7 +47,7 @@ const Login = () => {
                         popup: 'animate__animated animate__fadeOutUp'
                     }
                 });
-                navigate(form, { replace: true });
+                navigate(from, { replace: true });
             })
     }
 
@@ -86,10 +88,10 @@ const Login = () => {
                             </div>
                             <div className="form-control mt-6">
                                 {/* TODO: apply disabled for re captcha */}
-                                <input disabled={false} className="btn btn-primary" type="submit" value="Login" />
+                                <input disabled={disabled} className="btn btn-primary" type="submit" value="Login" />
                             </div>
                         </form>
-                        <p className='px-6'><small>New Here? <Link to="/signup">Create an account</Link> </small></p>
+                        <p className='px-6'><small>New Here? <Link className="btn btn-info ml-2 mb-2" to="/signup">Create an account</Link> </small></p>
                         {/* <SocialLogin></SocialLogin> */}
                     </div>
                 </div>
