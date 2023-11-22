@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
 import useAuth from '../../Hooks/useAuth';
 import Swal from 'sweetalert2'
+import SocialLogin from '../../Components/SocialLogin/SocialLogin';
 
 const Login = () => {
     const [disabled, setDisabled] = useState(true);
@@ -92,7 +93,7 @@ const Login = () => {
                             </div>
                         </form>
                         <p className='px-6'><small>New Here? <Link className="btn btn-info ml-2 mb-2" to="/signup">Create an account</Link> </small></p>
-                        {/* <SocialLogin></SocialLogin> */}
+                        <SocialLogin></SocialLogin>
                     </div>
                 </div>
             </div>
